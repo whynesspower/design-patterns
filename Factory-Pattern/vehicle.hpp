@@ -1,7 +1,7 @@
 #ifndef vehicle_hpp
 #define vehilce_hpp
 
-class vehicle
+class Vehicle
 {
 public:
     virtual void createVehicle() = 0;
