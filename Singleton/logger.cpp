@@ -19,12 +19,17 @@ void Logger::Log(string msg)
 
 Logger *Logger::getLogger()
 {
-    mtx.lock();
 
     if (loggerInstance == nullptr)
     {
-        loggerInstance = new Logger();
+
+        mtx.lock();
+
+        if (loggerInstance == nullptr)
+        {
+            loggerInstance = new Logger();
+        }
+        mtx.unlock();
     }
-    mtx.unlock();
     return loggerInstance;
 }
