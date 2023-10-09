@@ -8,10 +8,10 @@ class Logger
 {
 
     static int counter;
+    Logger();
 
 public:
-    Logger();
-    void Log(string msg);
+    static Logger *getLogger void Log(string msg);
 };
 
 #endif
