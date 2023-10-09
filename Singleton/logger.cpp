@@ -5,6 +5,7 @@ using namespace std;
 
 int Logger::counter = 0;
 Logger *Logger::loggerInstance = nullptr;
+mutex Logger::mtx;
 
 Logger::Logger()
 {
@@ -18,10 +19,12 @@ void Logger::Log(string msg)
 
 Logger *Logger::getLogger()
 {
+    mtx.lock();
 
     if (loggerInstance == nullptr)
     {
         loggerInstance = new Logger();
     }
+    mtx.unlock();
     return loggerInstance;
 }

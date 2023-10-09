@@ -2,6 +2,7 @@
 #define logger_h
 
 #include <string>
+#include <mutex>
 using namespace std;
 
 class Logger
@@ -11,6 +12,8 @@ class Logger
     // this is the single instance which will be used by all the
     // classes
     static Logger *loggerInstance;
+    static mutex mtx;
+
     Logger();
 
 public:
