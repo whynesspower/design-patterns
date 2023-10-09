@@ -13,8 +13,12 @@ class Logger
     // classes
     static Logger *loggerInstance;
     static mutex mtx;
-
     Logger();
+    // copy constructor is also set to private
+    Logger(const Logger &);
+
+    // equals to operator overloading is set to private
+    Logger operator=(const Logger &);
 
 public:
     static Logger *getLogger();
