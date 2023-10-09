@@ -18,6 +18,7 @@ void Logger::Log(string msg)
 
 Logger *Logger::getLogger()
 {
+
     if (loggerInstance == nullptr)
     {
         loggerInstance = new Logger();
