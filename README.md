@@ -17,3 +17,7 @@ This is for creating an executable file for the client which is based off vehicl
 
 `./client`
 running the executable file
+
+### In HPP files we just declare (initialize) stuff
+
+### In CPP files we define those things.
