@@ -8,10 +8,14 @@ class Logger
 {
 
     static int counter;
+    // this is the single instance which will be used by all the
+    // classes
+    static Logger *loggerInstance;
     Logger();
 
 public:
-    static Logger *getLogger void Log(string msg);
+    static Logger *getLogger();
+    void Log(string msg);
 };
 
 #endif
